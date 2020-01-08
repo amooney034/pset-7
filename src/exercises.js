@@ -3,7 +3,7 @@ function commonEnd(a, b) {
     return false;
   }
 
-  // write your code here
+  // write your code here ok
 }
 
 function endsMeet(values, n) {
