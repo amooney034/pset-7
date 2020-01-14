@@ -2,8 +2,21 @@ function commonEnd(a, b) {
   if (!a || a.length === 0 || !b || b.length === 0) {
     return false;
   }
+  let firstA = a[0]
+  let firstB = b[0]
+  let lastA = a[a.length - 1];
+  let lastB = b[b.length - 1];
 
-  // write your code here ok
+  // [ 1, 2, 3, 4, 5 ]
+  // 5
+  // last index 4
+
+  if ((firstA === firstB) || (lastA === lastB)) {
+    return true;
+  }
+  else {
+    return false;
+  }
 }
 
 function endsMeet(values, n) {
