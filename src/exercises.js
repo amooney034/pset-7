@@ -20,7 +20,9 @@ function commonEnd(a, b) {
 }
 
 function endsMeet(values, n) {
-  // write your code here
+  if (values === null || values.length < n || !(n>-1)) {
+    return false;
+  }
 }
 
 function difference(numbers) {
