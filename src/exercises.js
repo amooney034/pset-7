@@ -68,11 +68,23 @@ function max(number) {
  return fir;
  }
  }
-}
+ }
 
 function middle(values) {
-  // write your code here
-}
+ let blankArray = [];
+ if (values == undefined ||  values.length < 3 || values.length%2 == 0 ){
+ return [];
+ }
+
+ else {
+ let middle = values[values.length - (Math.ceil(values.length / 2))]
+ let secondMiddle = values[(values.length - 1) - (Math.ceil(values.length / 2))]
+
+ blankArray.push(secondMiddle, middle)
+
+ return blankArray;
+ }
+ }
 
 function increasing(numbers) {
   // write your code here
