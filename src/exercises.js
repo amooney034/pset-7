@@ -8,7 +8,7 @@ function commonEnd(a, b) {
   let lastB = b[b.length - 1];
 
   if ((firstA === firstB) || (lastA === lastB)) {
-    return true;
+   return true;
   }
   else {
     return false;
