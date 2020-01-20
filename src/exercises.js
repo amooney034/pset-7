@@ -7,10 +7,6 @@ function commonEnd(a, b) {
   let lastA = a[a.length - 1];
   let lastB = b[b.length - 1];
 
-  // [ 1, 2, 3, 4, 5 ]
-  // 5
-  // last index 4
-
   if ((firstA === firstB) || (lastA === lastB)) {
     return true;
   }
@@ -20,10 +16,28 @@ function commonEnd(a, b) {
 }
 
 function endsMeet(values, n) {
-  if (values === null || values.length < n || !(n>-1)) {
-    return false;
-  }
-}
+ let blankArray = [];
+
+ if (!values || values.length < n || !Number.isInteger(n) || n < 0) {
+ return blankArray;
+ } else {
+ if (n === 0) {
+ return values;
+ } else {
+ for (let i = 0; i < n; i++) {
+ if (values[i] !== undefined) {
+ blankArray.push(values[i]);
+ }
+ }
+ for (let i = n; i > 0; i--) {
+ if (values[values.length - i] !== undefined) {
+ blankArray.push(values[values.length - i]);
+ }
+ }
+ return blankArray;
+ }
+ }
+ }
 
 function difference(numbers) {
   // write your code here
