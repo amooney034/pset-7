@@ -112,8 +112,31 @@ function increasing(numbers) {
  }
 
 function everywhere(values, x) {
-  // write your code here
-}
+ if (values == undefined || x === undefined) {
+ return false;
+ } else if (values.length < 1) {
+    return false;
+ } else if (!values.includes(x)) {
+    return false;
+ } else {
+
+ for (let y = values.indexOf(x); y < values.length; y++) {
+ if (values[y] === values[y + 1] && values[y + 1] !== undefined) {
+ return true;
+ break;
+ } else if (x === 0) {
+ return false;
+ break;
+ } else if (values[y] === values[y + 2] && values[y + 2] !== undefined && values[y + 1] !== values[y]) {
+ return true;
+ break;
+ } else if (values[y] === values[y + 3] && values[y + 3] !== undefined && (values[y + 1] && values[y + 2]) !== values[y + 3]) {
+ return true;
+ break;
+ } else {
+ return false;
+ break;
+ }
 
 function consecutive(numbers) {
   // write your code here
