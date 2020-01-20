@@ -164,13 +164,46 @@ function consecutive(numbers) {
  }
 
 function balance(numbers) {
-  // write your code here
+  
   console.log("test");
 }
 
 function clumps(values) {
-  // write your code here
-}
+ if (!values) {
+ return -1;
+ }
+ if (values.length < 2) {
+ return 0;
+ }
+ let last = values[0];
+ let current;
+ let clump = 0
+ let one = 0
+ let count2 = 0
+ for (x = 1; x < values.length; x++) {
+ current = values[x]
+ if (last === current) {
+ clump = clump + 1
+ for (y = x; y < values.length; y++) {
+ last = current
+ current = values[y]
+ if (!(last === current)) {
+ one = 1
+ x = y
+ break;
+ }
+ else {
+ one = -1
+ }
+ }
+ }
+ if (one == -1) {
+ break;
+ }
+ last = current
+ }
+ return clump;
+ }
 
 /*
  * Exports all functions for use in external grader.js file. Do not modify.
