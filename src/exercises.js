@@ -54,7 +54,7 @@ function max(number) {
  if (!number || number.length < 3 || number.some(isNaN) || number.length % 2 == 0) {
  return undefined;
  }
- else{
+ else {
  var last = number[number.length - 1];
  var mid = number[(number.length - 1)/2];
  var fir = number[0];
@@ -137,10 +137,31 @@ function everywhere(values, x) {
  return false;
  break;
  }
+ }
+ }
+ }
 
 function consecutive(numbers) {
-  // write your code here
-}
+ if (!numbers || numbers.length < 3) {
+ return false;
+ }
+ let quiz = false;
+ for (let i = 0; i < numbers.length - 2; i++ ) {
+ let a = numbers[i];
+ let b = numbers[i + 1];
+ let c = numbers[i + 2];
+ if (Number.isInteger(a) == false || Number.isInteger(b) == false || Number.isInteger(c) == false ) {
+ return false;
+ }
+ if (a % 2 == 0 && b % 2 == 0 && c % 2 == 0) {
+ quiz = true;
+ } else if (a % 2 == 1 && b % 2 == 1 && c % 2 == 1) {
+ test = true;
+ }
+
+ }
+ return quiz;
+ }
 
 function balance(numbers) {
   // write your code here
