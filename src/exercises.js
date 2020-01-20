@@ -40,8 +40,14 @@ function endsMeet(values, n) {
  }
 
 function difference(numbers) {
-  // write your code here
-}
+ return undefined;
+ } else {
+ let max = Number(Math.max.apply(null, numbers));
+ let min = Number(Math.min.apply(null, numbers));
+ let diff = max - min;
+ return diff;
+ }
+ }
 
 function max(number) {
   // write your code here
