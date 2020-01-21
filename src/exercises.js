@@ -16,23 +16,28 @@ function commonEnd(a, b) {
 }
 
 function endsMeet(values, n) {
-  let blank = [];
-  let array = [];
-  if (!values || values.length < n || n < 0) {
-    return array;
-  }
-  for (i = 0; i < n; i++) {
-    array.push(values[i]);
-  }
-  for (z = values.length - n; z < values.length; z++) {
-    array.push(values[z])
-  }
-  if (n === 0) {
-    return blank;
-  }
-  return array
-}
+  let Array = [];
 
+  if (!values || values.length < n || !Number.isInteger(n) || n < 0) {
+    return Array;
+  } else {
+    if (n === 0) {
+      return values;
+    } else {
+      for (let i = 0; i < n; i++) {
+        if (values[i] !== undefined) {
+          Array.push(values[i]);
+        }
+      }
+      for (let i = n; i > 0; i--) {
+        if (values[values.length - i] !== undefined) {
+          Array.push(values[values.length - i]);
+        }
+      }
+      return Array;
+    }
+  }
+}
 function difference(numbers) {
   let diff = 0;
   let big = 0;
